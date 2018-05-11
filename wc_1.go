@@ -30,7 +30,7 @@ func wordCounter( filename string ) ( bytes int64, words int64 ) {
 
 	timeStart := time.Now()
 
-	var bytesRead, wordsRead int64 
+	var totalBytesRead, wordsRead int64 
 	var str, lastWord string
 
 	logLine( os.Stderr, fmt.Sprintf( "wordCounter started for %s", filename ) )
@@ -93,7 +93,7 @@ func wordCounter( filename string ) ( bytes int64, words int64 ) {
 
 	timeEnd := time.Now()
 	logLine( os.Stderr, fmt.Sprintf( "wordCounter finished in %s for %s", timeEnd.Sub(timeStart), filename ) )
-	return bytesRead, wordsRead
+	return totalBytesRead, wordsRead
 
 }
 
